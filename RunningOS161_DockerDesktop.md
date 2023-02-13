@@ -1,10 +1,10 @@
-# Running the `cse4001` docker container
+# Running the `cse4001` docker container (Mac OS)
 
 ##  Using the Docker Desktop App
 
 1. Start Docker Desktop.
 
-![image-20230213130622046](/Users/eribeiro/Documents/work/teaching/cse4001/assignments/dockerOs161/image-20230213130622046.png)
+![image-20230213130622046](image-20230213130622046.png)
 
 ​	**Figure 1**: Docker dashboard showing the cse4001 docker container. 
 
@@ -38,7 +38,7 @@ I prefer to use the terminal to work with the `cse4001` Docker container. On my 
 
 1. Start Docker Desktop 
 
-![image-20230213130622046](/Users/eribeiro/Documents/work/teaching/cse4001/assignments/dockerOs161/image-20230213130622046.png)
+![image-20230213130622046](image-20230213130622046.png)
 
 ​	**Figure 5**: Docker dashboard showing the `cse4001` docker container. 
 
