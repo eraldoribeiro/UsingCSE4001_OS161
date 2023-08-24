@@ -136,5 +136,5 @@ docker start -i cse4001
 
 ​    ![image-20230213180559154](image-20230213180559154.png)
 
-**Figure 8**: Opening a second terminal running the same docker container. With two terminals open, we can boot `OS161` (from the `os161/root` directory) and we can navigate the source code of assignments that are in the shared directory `/root/workspace`. Note that this `/root/` directory is not `OS161's root` directory. Instead, it is a directory called root inside the `cse4001` Docker container. 
+**Figure 8**: Opening a second terminal running the same docker container. In one terminal, we can boot `OS161` (from the `os161/root` directory). In the other terminal, we can navigate the source code of assignments that are in the shared directory `/root/workspace`. Note that this `/root/` directory is not `OS161's root` directory. Instead, it is the root directory inside the `cse4001` Docker container. 
 
