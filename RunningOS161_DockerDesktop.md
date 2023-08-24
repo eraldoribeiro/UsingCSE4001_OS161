@@ -38,7 +38,7 @@ This example shows how to download (and run) docker, and create a shared folder.
 
 Open the Unix terminal. To run the `bash` shell, simply type `bash` on your terminal, i.e.: 
 
-![image-20220925140404690](../assignments/02_addSysCall/image-20220925140404690.png)
+![image-20220925140404690](./image-20220925140404690.png)
 
 Go inside the shared directory that you created. In this example, the shared directory on the host computer is `~/Desktop/cse4001`. 
 
@@ -54,7 +54,7 @@ docker run -v $(PWD):/root/workspace -ti --name cse4001 tjoconnor/cse4001:latest
 
 The container is a large file so downloading it might take a few minutes. Once it is ready, the terminal will show the following information: 
 
-![image-20220925142155755](../assignments/02_addSysCall/image-20220925142155755.png)
+![image-20220925142155755](./image-20220925142155755.png)
 
 This is now your Linux with OS/161 installed. There is (almost) nothing else that needs to be installed for CSE4001. However, if you need to install any other linux packages, you can do it using `apt-get` or similar package managers. 
 
