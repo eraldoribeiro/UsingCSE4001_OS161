@@ -25,4 +25,33 @@ cd ~/os161/root
 sys161 kernel
 ```
 
+The kernel will print various messages as it boots. When it has finished booting, it will present you with a command prompt. The output should look something like this:
 
+```
+linux028.student[182]% sys161 kernel
+sys161: System/161 release 1.99.06, compiled Aug 23 2013 10:23:34
+
+OS/161 base system version 1.99.05
+Copyright (c) 2000, 2001, 2002, 2003, 2004, 2005, 2008, 2009
+   President and Fellows of Harvard College.  All rights reserved.
+
+Put-your-group-name-here's system version 0 (ASST0 #1)
+
+312k physical memory available
+Device probe...
+lamebus0 (system main bus)
+emu0 at lamebus0
+ltrace0 at lamebus0
+ltimer0 at lamebus0
+beep0 at ltimer0
+rtclock0 at ltimer0
+lrandom0 at lamebus0
+random0 at lrandom0
+lhd0 at lamebus0
+lhd1 at lamebus0
+lser0 at lamebus0
+con0 at lser0
+
+cpu0: MIPS r3000
+OS/161 kernel [? for menu]:
+```
