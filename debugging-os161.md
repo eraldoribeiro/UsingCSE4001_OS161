@@ -34,9 +34,13 @@ At this point, sys161 is paused, waiting for a connection from the debugger.
 
 Next, in the other window (your debug window), move into the runtime root directory - the same directory in which you are running sys161 - and run `os161-gdb` on the kernel and tell GDB to connect to sys/161:
 
+```
 os161-gdb kernel
+```
+
 You should see some output like this from the debugger:
 
+```
 $ os161-gdb kernel
 GNU gdb 6.6
 Copyright (C) 2006 Free Software Foundation, Inc.
@@ -45,13 +49,19 @@ welcome to change it and/or distribute copies of it under certain conditions.
 Type "show copying" to see the conditions.
 There is absolutely no warranty for GDB.  Type "show warranty" for details.
 This GDB was configured as "--host=x86_64-unknown-linux-gnu --target=mips-harvard-os161"...
-(gdb) 
+(gdb)
+```
+
 The (gdb) is the debugger's command prompt. The debugger is now stopped, waiting for you to enter a command. You want to give it the following commands:
 
+```
 (gdb> dir ../src/kern/compile/ASSTX
 (gdb) target remote unix:.sockets/gdb
+```
+
 The first command just tells gdb where to find the .o files for your kernel. The second command tells gdb to connect to the waiting sys161 program that is running in your other window. (Don't forget the "." before sockets/gdb.) You should see output something like this in the debugger window:
 
+```
 (gdb) dir ../src/kern/compile/ASST0
 Source directories searched: /u5/kmsalem/cs350-os161/root/../src/kern/compile/ASST0:$cdir:$cwd
 (gdb) target remote unix:.sockets/gdb
@@ -59,12 +69,17 @@ Remote debugging using unix:.sockets/gdb
 __start () at ../../arch/mips/mips/start.S:24
 24	   addiu sp, sp, -20
 Current language:  auto; currently asm
-(gdb) 
+(gdb)
+```
+
 and you should see a message like sys161: New debugger connection in the sys161 window.
 
-At this point, your kernel is running under control of the debugger. Your kernel is waiting to start its execution (in the assembly language function start.S) as soon as the debugger allows it to proceed. You may now issue any gdb commands that you would like to, e.g., you may set breakpoints to force kernel execution to halt wherever you want. When you are ready to go, you can use gdb's continue command to allow the kernel's execution to proceed:
+At this point, your kernel is running under control of the debugger. Your kernel is waiting to start its execution (in the assembly language function `start.S`) as soon as the debugger allows it to proceed. You may now issue any gdb commands that you would like to, e.g., you may set breakpoints to force kernel execution to halt wherever you want. When you are ready to go, you can use gdb's continue command to allow the kernel's execution to proceed:
 
+```
 (gdb) c
+```
+
 When you do this, the kernel should start running in the other window. Unless you've set breakpoints, the kernel should print its usual boot messages and eventually provide you with the kernel command prompt.
 
 For more information about using GDB, see Debugging with GDB Links to an external site..
