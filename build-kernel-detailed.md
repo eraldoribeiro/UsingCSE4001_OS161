@@ -1,6 +1,6 @@
 # Building OS/161 (Detailed version)
 
-In these notes, the directory `src/` contains the kernel source files. For assignments, you will be provided a different version of the source code and the directory name might be different and, as a result, you will need to change the name `src/` to the name of the directory containing the source code for OS/161.
+In these notes, the directory `src/` contains the kernel source files. For assignments, you will be provided a different version of the source code and the directory name might be different and, as a result, you will need to replace the name `src/` with the name of the directory containing the source code for OS/161.
 
 ## Kernel-level building steps 
 
