@@ -53,3 +53,81 @@ bmake install
 in the kernel build directory. This will put a copy of your newly-built kernel in the directory `~/os161/root` in a file called `kernel-ASSTX`. It will also set the symbolic link kernel (also in the `~/os161/root` directory) to refer to the newly-installed kernel.
 
 
+
+## Building `Userland`: the OS/161 User-Level Programs
+
+OS/161 comes with a variety of user-level programs that can run on top of the OS/161 kernel. These include standard UNIX-style utility programs, like `ls` and `cat`, and a variety of test programs. The source files for the utility programs are located in `~/os161/src/userland/{bin,sbin}`. The source files for the test programs are located in `~/os161/src/userland/testbin`.
+
+Note that many user programs will not run with OS/161 as it is initially distributed, since many *system calls* are not implemented in this version of the operating system.
+
+User-level programs are built and installed from the directory `~/os161/src/`. To build and install all of the user-level programs, simply run:
+
+```shell
+bmake
+bmake install
+```
+
+User-level programs are installed under `~/os161/root/` in the `bin/`, `sbin/`, and `testbin/` directories.
+
+### Running OS/161
+
+The OS/161 kernel, as well as OS/161 user-level programs, run on the sys/161 machine simulator. To run your OS/161 kernel, you start up the simulator and you pass it the name of the file that contains your kernel binary.
+
+When you run OS/161, you should be in the runtime root directory, which is `~/os161/root`. From the runtime root directory, use the command
+
+```shell
+sys161 kernel-ASSTX
+```
+
+or simply:
+
+```shell
+sys161 kernel
+```
+
+Both do the same thing, because `bmake install` makes `kernel` a symbolic link to `kernel-ASSTX`.
+
+The kernel will print various messages as it boots. When it has finished booting, it will present you with a command prompt. The output should look something like this:
+
+```
+linux028.student[182]% sys161 kernel
+sys161: System/161 release 1.99.06, compiled Aug 23 2013 10:23:34
+
+OS/161 base system version 1.99.05
+Copyright (c) 2000, 2001, 2002, 2003, 2004, 2005, 2008, 2009
+   President and Fellows of Harvard College.  All rights reserved.
+
+Put-your-group-name-here's system version 0 (ASST0 #1)
+
+312k physical memory available
+Device probe...
+lamebus0 (system main bus)
+emu0 at lamebus0
+ltrace0 at lamebus0
+ltimer0 at lamebus0
+beep0 at ltimer0
+rtclock0 at ltimer0
+lrandom0 at lamebus0
+random0 at lrandom0
+lhd0 at lamebus0
+lhd1 at lamebus0
+lser0 at lamebus0
+con0 at lser0
+
+cpu0: MIPS r3000
+OS/161 kernel [? for menu]:
+```
+
+You can type `q` at the command prompt to cause the kernel to shut down. Typing `?` will show you other commands. Note that some menu commands will not work properly at the beginning, because they depend on kernel functionality that you have not yet implemented. One particular thing that you can do from the kernel menu is to launch an initial user-level program, such as a command shell or some test program. (The `p` and `s` commands do this. For more information, see the on-line help for the operations menu.) Again, most of these programs will not work initially because they depend on unimplemented kernel functionality.
+
+One thing you should notice, near the beginning of the kernel's boot messages, is the line:
+
+```
+Put-your-group-name-here's system version 0 (ASST1 #5)
+```
+
+What the kernel is doing here is printing its "build number" - the same number that was displayed in the bmake output when the kernel was built. This is a great way for you to ensure that the kernel that you are running is actually the kernel that you built, and not some earlier version of your kernel.
+
+
+
+
