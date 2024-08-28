@@ -82,5 +82,5 @@ At this point, your kernel is running under control of the debugger. Your kernel
 
 When you do this, the kernel should start running in the other window. Unless you've set breakpoints, the kernel should print its usual boot messages and eventually provide you with the kernel command prompt.
 
-For more information about using GDB, see Debugging with GDB Links to an external site..
+For more information about using GDB, see [Debugging with GDB](http://www.student.cs.uwaterloo.ca/~cs350/common/gdb.html).
 
