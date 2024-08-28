@@ -1,1 +1,2 @@
-# UsingCSE4001_OS161
+# Working with OS/161 in CSE4001
+
