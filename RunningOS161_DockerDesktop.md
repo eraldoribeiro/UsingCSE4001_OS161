@@ -12,7 +12,7 @@ The following commands include the bind/mount of a shared folder between the doc
 
 To download the docker container, we need to execute the `docker run` command. This command's syntax is a bit different for each OS platform, i.e.: 
 
-######Windows:
+###### Windows:
 
 ```shell
 docker run -v "$(PWD):/root/workspace" -ti --name cse4001 tjoconnor/cse4001:latest
@@ -30,9 +30,9 @@ docker run -v $(PWD):/root/workspace -ti --name cse4001 tjoconnor/cse4001:latest
 docker run -v $(PWD):/root/workspace -ti --platform linux/amd64 --name cse4001 tjoconnor/cse4001:latest
 ```
 
-#### Example
+#### Example (Intel Mac OS X)
 
-This example shows how to download (and run) docker, and create a shared folder. The shared folder in the docker container is `root/workspace` and is located at `~/Desktop/cse4001` in the host computer. 
+This example shows how to download (and run) docker, and create a shared folder om an Intel Mac computer. The shared folder is located at `root/workspace` in the docker container, is located at `~/Desktop/cse4001` in the host computer.  
 
 **Make sure your shell is** **bash**. Before running the `docker run` command, you need to ensure that you are using the bash shell (i.e., the `bash` command-line interpreter). The docker runs on a bash shell. If your terminal runs another shell, type `bash` to start a bash shell on the same terminal. 
 
