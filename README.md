@@ -2,4 +2,4 @@
 
 - [Install the CSE4001 Docker container](./RunningOS161_DockerDesktop.md)
 - [Building OS/161 (Short version)](./buildOS161-short.md)
-
+- [Building OS/161 (Detailed version)](./build-kernel-detailed.md)
