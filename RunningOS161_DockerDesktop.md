@@ -1,10 +1,10 @@
 # Running the `cse4001` docker container
 
-### Install Docker on your computer
+## Install Docker on your computer
 
 Skip this step if Docker is already installed on your computer. To install Docker, follow the instructions from the following link: https://www.docker.com/products/docker-desktop/. 
 
-### Get the CSE 4001 Docker container
+## Get the CSE 4001 Docker container
 
 Now that Docker is installed on your computer, it is time to get the actual container for `CSE4001`.  
 
@@ -12,25 +12,27 @@ The following commands include the bind/mount of a shared folder between the doc
 
 To download the docker container, we need to execute the `docker run` command. This command's syntax is a bit different for each OS platform, i.e.: 
 
-###### Windows:
+### Windows:
 
 ```shell
 docker run -v "$(PWD):/root/workspace" -ti --name cse4001 tjoconnor/cse4001:latest
 ```
 
-###### Linux/Intel Mac:
+### Linux/Intel Mac:
 
 ```shell
 docker run -v $(PWD):/root/workspace -ti --name cse4001 tjoconnor/cse4001:latest
 ```
 
-###### M1/M2 Mac:
+### M1/M2 Mac:
 
 ```shell
 docker run -v $(PWD):/root/workspace -ti --platform linux/amd64 --name cse4001 tjoconnor/cse4001:latest
 ```
 
-#### Example (Intel Mac OS X)
+Before running one of the above commands, study the example given in the following section. 
+
+## Example (Intel Mac OS X)
 
 This example shows how to download (and run) docker, and create a shared folder om an Intel Mac computer. The shared folder is located at `root/workspace` in the docker container, is located at `~/Desktop/cse4001` in the host computer.  
 
@@ -62,7 +64,7 @@ In addition to the information displayed on the console, you should also see the
 
 ![image-20220925145526045](./image-20220925145526045.png)
 
-### Using the already installed CSE 4001 Docker container
+## Using the already installed CSE 4001 Docker container
 
 If the container is already running, just click on the `terminal` icon besides the container name listed on the Docker Desktop. If it is not running, click on the `play` button and then click on the `terminal` icon to open the container's terminal. 
 
@@ -100,7 +102,7 @@ If the container is already running, just click on the `terminal` icon besides t
 
 ## Using the terminal(s)
 
-I prefer to use the terminal to work with the `cse4001` Docker container. On my Mac OS, I use a combination of Docker Desktop interactions with command-line instructions. 
+I prefer to use the terminal to work with the `cse4001` Docker container. On my Mac OS, I use a combination of Docker Desktop interactions (GUI) with command-line instructions (Terminal). 
 
 1. Start Docker Desktop 
 
