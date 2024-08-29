@@ -15,36 +15,40 @@ Your OS/161 source directory contains the following files:
 
 The source directory contains the following subdirectories:
 
-`common/`: code used both by the kernel and user programs, mostly standard C library functions.
-design/`: contains design documents describing several OS/161 components.
-kern/: the kernel source code, and the subdirectory where you will spend most of your time.
-man/: the OS/161 man pages appear here. The man pages document (or specify) every program, every function in the C library, and every system call. The man pages are HTML and can be read with any browser.
-mk/: fragments of Makefiles used to build the system.
-userland/: user space libraries and program code.
-If you have previously configured and built in this directory there are also some additional files and directories that have been created, such as defs.mk and build/.
+- `common/`: code used both by the kernel and user programs, mostly standard C library functions.
+- `design/`: contains design documents describing several OS/161 components.
+- `kern/`: the kernel source code, and the subdirectory where you will spend most of your time.
+- `man/`: the OS/161 man pages appear here. The man pages document (or specify) every program, every function in the C library, and every system call. The man pages are HTML and can be read with any browser.
+- `mk/`: fragments of Makefiles used to build the system.
+- `userland/`: user space libraries and program code.
+  
+If you have previously configured and built in this directory there are also some additional files and directories that have been created, such as `defs.mk` and `build/`.
 
-User Land
-In the userland/ source subdirectory, you will find:
+## User Land
+In the `userland/` source subdirectory, you will find:
 
-bin/: all the utilities that are typically found in /bin/—cat, cp, ls, etc. Programs in /bin/ are considered fundamental utilities that the system needs to run.
-include/: these are the include files that you would typically find in /usr/include (in our case, a subset of them). These are user include files, not kernel include files.
-lib/: library code lives here. We have only two libraries: libc, the C standard library, and hostcompat, which is for recompiling OS/161 programs for the host UNIX system. There is also a crt0 directory, which contains the startup code for user programs.
-sbin/: this is the source code for the utilities typically found in /sbin on a typical UNIX installation. In our case, there are some utilities that let you halt the machine, power it off, and reboot it, among other things.
-testbin/: these are pieces of test code that we will use to test and grade your assignments.
-You don’t need to understand the files in userland/bin/, userland/sbin/, and userland/testbin/ now, but you certainly will later on. Eventually, you will want to modify these or write your own utilities and these are good models. Similarly, you need not read and understand everything in userland/lib and userland/include but you should know enough about what’s there to be able to get around the source tree easily. The rest of our code walk-through is going to focus on kern/.
+- `bin/`: all the utilities that are typically found in `/bin/—cat`, `cp`, `ls`, etc. Programs in `/bin/` are considered fundamental utilities that the system needs to run.
+- `include/`: these are the include files that you would typically find in `/usr/include` (in our case, a subset of them). These are user include files, not kernel include files.
+- `lib/`: library code lives here. We have only two libraries: libc, the C standard library, and `hostcompat`, which is for recompiling OS/161 programs for the host UNIX system. There is also a `crt0` directory, which contains the startup code for user programs.
+- `sbin/`: this is the source code for the utilities typically found in `/sbin` on a typical UNIX installation. In our case, there are some utilities that let you halt the machine, power it off, and reboot it, among other things.
+- `testbin/`: these are pieces of test code that we will use to test and grade your assignments.
+You don’t need to understand the files in `userland/bin/`, `userland/sbin/`, and `userland/testbin/` now, but you certainly will later on. Eventually, you will want to modify these or write your own utilities and these are good models. Similarly, you need not read and understand everything in `userland/lib` and `userland/include` but you should know enough about what’s there to be able to get around the source tree easily. The rest of our code walk-through is going to focus on `kern/`.
 
-Kernel Sources
-Now let’s navigate to the kern/ source subdirectory. Once again, there is aMakefile. This Makefile installs header files but does not build anything. In addition, we have more subdirectories for each component of the kernel as well as some utility directories and configuration files.
+## Kernel Sources
+Now let’s navigate to the `kern/` source subdirectory. Once again, there is a `Makefile`. This `Makefile` installs header files but does not build anything. In addition, we have more subdirectories for each component of the kernel as well as some utility directories and configuration files.
 
-kern/arch
+`kern/arch`
+
 This is where architecture-specific code goes. By architecture-specific, we mean the code that differs depending on the hardware platform on which you’re running. There are two directories here: mips which contains code specific to the MIPS processor and sys161 which contains code specific to the System/161 simulator.
 
-kern/arch/mips/conf/conf.arch: this file tells the kernel configuration script where to find the machine-specific, low-level functions it needs (throughout kern/arch/mips/).
+- `kern/arch/mips/conf/conf.arch`: this file tells the kernel configuration script where to find the machine-specific, low-level functions it needs (throughout kern/arch/mips/).
 kern/arch/mips/include/: this folder and its subdirectories include files for the machine-specific constants and functions.
-kern/arch/mips/: The other directories contain source files for the machine-dependent code that the kernel needs to run. Most of this code is quite low-level.
-kern/arch/sys161/conf/conf.arch: Similar to mips/conf/conf.arch.
-kern/arch/sys161/include: These files are include files for the System/161-specific hardware, constants, and functions.
-kern/compile/
+- `kern/arch/mips/`: The other directories contain source files for the machine-dependent code that the kernel needs to run. Most of this code is quite low-level.
+- `kern/arch/sys161/conf/conf.arch`: Similar to mips/conf/conf.arch.
+- `kern/arch/sys161/include`: These files are include files for the System/161-specific hardware, constants, and functions.
+  
+`kern/compile/`
+
 This is where you build kernels. In the compile directory, you will find one subdirectory for each kernel configuration target you have used you want to build. For example, if you configure your kernel with the DUMBVM configuration to turn on dumbvm, a DUMBVM subdirectory will be created in kern/compile where you can compile your dumbvm kernel. This directory and build organization is typical of UNIX installations and is not universal across all operating systems.
 
 kern/conf/config: is the script that takes a configuration file, like GENERIC, and creates the corresponding build directory.
