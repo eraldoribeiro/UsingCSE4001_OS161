@@ -34,7 +34,7 @@ Before running one of the above commands, study the example given in the followi
 
 ## Example (Intel Mac OS X)
 
-This example shows how to download (and run) docker, and create a shared folder om an Intel Mac computer. The shared folder is located at `root/workspace` in the docker container, is located at `~/Desktop/cse4001` in the host computer.  
+This example shows how to download (and run) docker, and create a shared folder on an **Intel Mac computer**. The shared folder is located at `root/workspace` in the docker container, is located at `~/Desktop/cse4001` in the host computer.  
 
 **Make sure your shell is** **bash**. Before running the `docker run` command, you need to ensure that you are using the bash shell (i.e., the `bash` command-line interpreter). The docker runs on a bash shell. If your terminal runs another shell, type `bash` to start a bash shell on the same terminal. 
 
@@ -42,13 +42,13 @@ Open the Unix terminal. To run the `bash` shell, simply type `bash` on your term
 
 ![image-20220925140404690](./image-20220925140404690.png)
 
-Go inside the shared directory that you created. In this example, the shared directory on the host computer is `~/Desktop/cse4001`. 
+Go into the shared directory that you created. In this example, the shared directory on the host computer is `~/Desktop/cse4001`. 
 
 ```shell
 cd ~/Desktop/cse4001/
 ```
 
-From inside the host shared directory, execute the `docker run` command as follows:
+**From inside this directory**, execute the `docker run` command as follows:
 
 ```shell
 docker run -v $(PWD):/root/workspace -ti --name cse4001 tjoconnor/cse4001:latest
