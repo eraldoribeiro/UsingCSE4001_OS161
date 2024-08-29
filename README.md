@@ -5,3 +5,4 @@
 - [Building and running OS/161 (Detailed version)](./build-kernel-detailed.md)
 - [Debugging OS/161](./debugging-os161.md)
 - [OS/161 source tree](./os161-source-tree.md)
+- [System documentation](./system-documentation.md)
