@@ -16,7 +16,7 @@ bmake
 bmake install
 ```
 
-In this case, the source directory is named `src` and the kernel configuration file is `DUMBVM`. However, these two names may change depending on the assignment. Each assignment will have a different source code directory and a different configuration file. For example, an assignment might have the kernel source files in a directory named `add_system_calls` innstead of `src`, and a configuration file named `ASSIGNMT01` instead of `DUMBVM`, which means that the building instructions need to be changed accordingly. 
+In this case, the source directory is named `src` and the kernel configuration file is `DUMBVM`. However, these two names may change depending on the assignment. Each assignment will have a different source-code directory and a different configuration file. For example, an assignment might have the kernel source files in a directory named `add_system_calls` instead of `src`, and a configuration file named `ASST01` instead of `DUMBVM`, which means that you need to modify the building instructions accordingly. 
 
 ## Building the user-level programs (i.e., `userland`): 
 
