@@ -51,7 +51,7 @@ cd ~/Desktop/cse4001/
 **From inside this directory**, execute the `docker run` command as follows:
 
 ```shell
-docker run -v $(PWD):/root/workspace -ti --name cse4001 tjoconnor/cse4001:latest
+docker run -v $(PWD):/root/workspace -ti --name cse4001 eribeirofit/cse4001:latest
 ```
 
 The container is a large file so downloading it might take a few minutes. Once it is ready, the terminal will show the following information: 
