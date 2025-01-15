@@ -15,19 +15,19 @@ To download the docker container, we need to execute the `docker run` command. T
 ### Windows:
 
 ```shell
-docker run -v "$(PWD):/root/workspace" -ti --name cse4001 tjoconnor/cse4001:latest
+docker run -v "$(PWD):/root/workspace" -ti --name cse4001 eribeirofit/cse4001:latest
 ```
 
 ### Linux/Intel Mac:
 
 ```shell
-docker run -v $(PWD):/root/workspace -ti --name cse4001 tjoconnor/cse4001:latest
+docker run -v $(PWD):/root/workspace -ti --name cse4001 eribeirofit/cse4001:latest
 ```
 
 ### M1/M2 Mac:
 
 ```shell
-docker run -v $(PWD):/root/workspace -ti --platform linux/amd64 --name cse4001 tjoconnor/cse4001:latest
+docker run -v $(PWD):/root/workspace -ti --platform linux/amd64 --name cse4001 eribeirofit/cse4001:latest
 ```
 
 Before running one of the above commands, study the example given in the following section. 
